@@ -1,0 +1,114 @@
+
+.hero{
+  background-image: url("./Assets/space2.webp");
+  background-position: center;
+  color: white;
+  height: 70vh;
+
+}
+.p-style{
+  background-color: #212529;
+  color: whitesmoke;
+}
+.inverse:hover,.theme-bg{
+ background-image: linear-gradient(to left,#AE8625, #F7EF8A,#D2AC47, #EDC967 );
+ color: black
+}
+.theme-text,.fa{
+  color: #AE8625;
+  
+  
+}
+.inverse{
+  border: solid 1px #AE8625;
+  color: white;
+}
+.form{
+  width: clamp(360px, 50%, 650px);
+  margin: auto;
+}
+.form input, .form input:focus{
+  border: none;
+  border-bottom: 2px solid black;
+  outline: none !important;
+}
+.form{
+  border: solid 1px black;
+  padding: 12px;
+}
+
+.cover{
+  width: 100%;
+  max-height: 25vh;
+  object-fit: cover;
+}
+.profile{
+  position: absolute;
+  top: 25vh;
+  left: 36px;
+  border-radius: 50%;
+}
+.text-area{
+  height: 480px;
+  resize: none;
+}
+.mod{
+  
+  background-color: whitesmoke;
+  
+
+}
+.input, .input:focus{
+  background-color: white;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+}
+textarea{
+  resize: none;
+  height: 40vh;
+}
+
+img{
+  border-radius:0 0 6px 6px;
+}
+
+
+@media screen and (min-width:767px){
+  .quote,.c-form{
+    width: 50vw;
+    margin: auto;
+
+  }
+  
+}
+input#submit{
+  background-color: #0000ff;
+  color: white;
+}
+
+
+
+/* ADMIN COLORS */
+
+.btns{
+background-color: #20bf55;
+background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+
+
+}
+.info{
+  background-color: red;
+  position: absolute;
+  top: 55.5vh;
+}
+.foot{
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.moddy{
+  display: grid;
+  place-items: center;
+}
