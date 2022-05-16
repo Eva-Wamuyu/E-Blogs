@@ -23,7 +23,7 @@ def writerIndex():
       #if form1.password.data == person.passwd:
         user = {'email': form1.email.data}
         
-        time = int(datetime.datetime.now().timestamp())+10
+        time = int(datetime.datetime.now().timestamp())+100
         jwt_token = jwt.encode({'user':user,'exp':time},key="hehe publik",algorithm="HS256")
         session['jwt'] = jwt_token
         print(jwt_token)
