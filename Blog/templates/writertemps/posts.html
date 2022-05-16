@@ -1,0 +1,97 @@
+{% extends '/base.html' %}
+
+
+{% block navigation %}
+
+<div class="" id="navcol-5 text-light text-center">
+  <ul class="navbar-nav ms-auto">
+      <li class="nav-item"> <a class="nav-link btn" href="{{url_for('userview.aboutWriter')}}">Account</a></li>
+      <li class="nav-item"><a class="nav-link btn" href="{{url_for('writer_view.main')}}">Add A Blog</a></li>
+      <li class="nav-item"> <a class="nav-link btn" href="{{url_for('writer_view.posts')}}">Posts</a></li>
+      <li class="nav-item"><a class="nav-link btn" href="{{url_for('writer_view.profile')}}">Writer Profile</a></li>
+  </ul>
+</div>
+<hr>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="text-center">
+<h3>Posts and their comments</h3>
+<h3>You can update or delete them</h3>
+
+</div>
+
+<div class="container">
+  {% if posts %}
+  {%for post in posts %}
+  
+  <div class="post">
+    
+    <h4>{{post.title}}</h4>
+    <p>
+      {{post.brief}}
+    </p>
+    <p>
+      <a class="btn text-light border-warning" href="{{url_for('writer_view.del_success',post=post._id)}}">Delete Blog</a>
+      <a class="btn text-light border-warning" href="{{url_for('writer_view.edit',post=post._id)}}">Update/Edit</a>
+    </p>
+    </p>
+  
+  <div class="comments">
+    {%if post.fetchComments(post._id) %}
+    <div>
+      <p class="text-decoration-underline">
+        COMMENTS FOR {{post.title}}
+      </p>
+      {% for comment in post.fetchComments(post._id)%}
+        <p>
+      {{comment.body}}
+      <p class="by">
+        By: <br>
+        {{comment.commentor}}
+      </p>
+        </p>
+        <a class="btn text-light border-danger" href="{{url_for('writer_view.del_comment',post=comment._id)}}">Delete</a>
+    
+ 
+    {%endfor %}
+ 
+    {%else%}
+  </div>
+    <div>
+      <p>
+        No comments
+      </p>
+    </div>
+  </div>
+</div>
+    {% endif %}
+  
+  <hr>
+  <hr>
+  {%endfor%}
+
+ 
+
+
+  {%else%}
+  <p>
+    No Posts
+  </p>
+
+</div>
+
+  {% endif %}
+  
+
+
+
+  
+{% endblock %}
+
+
+ {% block footer %}
+   
+ {% endblock %}

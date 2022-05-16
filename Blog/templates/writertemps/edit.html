@@ -1,0 +1,62 @@
+{% extends './base.html' %}
+
+{% block navigation %}
+  
+{% endblock %}
+
+{% block content %}
+<div class="container text-light">
+  <a class="btn theme-bg" href="{{url_for('writer_view.posts')}}">Go Back</a>
+<h3>
+  EDIT
+</h3>
+<form action="post">
+  {{ form.hidden_tag() }}
+  <div class="form-group">
+    <p>
+      Edit the Pic path
+    </p>
+    {{form.img(class="form-control")}}
+  </div>
+  <div class="form-group">
+  <p>
+    Edit the title
+  </p>
+  {{form.title(class="form-control")}}
+  </div>
+  <div class="form-group">
+  <p>
+    Edit the post
+  </p>
+  {{form.post(class="form-control")}}
+  </div>
+  <div class="form-group">
+     {{form.submit()}}
+  </div>
+</form>
+
+</div>
+
+
+
+
+
+
+  
+{% endblock %}
+<div class="container">
+
+
+
+
+
+
+
+</div>
+
+
+
+
+{% block footer %}
+  
+{% endblock %}
