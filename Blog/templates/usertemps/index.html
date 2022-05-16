@@ -1,0 +1,81 @@
+{% extends './base.html' %}
+
+{% block content %}
+<div class="hero container-fluid">
+  <div class="text-center pt-5">
+    <h1 class="h1 mb-3">
+         E-Blogs
+    </h1>
+    <p>
+      Welcome to E-Blogs.
+      <br>
+      <small>
+        A shortened version of Eva blogs(the verb)
+             <br>
+             tis all about tech
+      </small>
+    </p>
+  </div>
+
+  <div class="quote text-center">
+    <p>
+      <span class="ml-2 mb-2">
+        <i class="fa fa-quote-left"></i>
+      </span>
+      {{quote.quote}}
+     <span class="ms-2 mt-5">
+      <i class="fa fa-quote-right"></i>
+     </span>
+    </p> 
+    <p>
+      {{quote.author}}
+    </p>
+  </div>
+  <div class="text-center mt-5">
+    <p>
+      <a class="btn theme-bg px-5" href="{{url_for('userview.post',post=4)}}">Latest Post</a>
+      <a class="btn inverse" href="{{url_for('userview.aboutWriter')}}">About the Blogger</a> 
+    </p>
+  </div>
+ 
+ 
+
+</div>
+
+<div class="container blogs">
+  <h2 class="text-center">Blogs</h2>
+  <div class="row justify-content-around mb-5">
+    {%if blogs%}
+     {% for blog in blogs %}
+     <div class="col-md-4">
+       <h4 class="heading px-2">{{blog.category}}</h4>
+       <h6 class="d-flex justify-content-between"> <small>{{blog.date}} </small> 
+       <small>  {{blog.title}}</small>
+       </h6>
+       <img src="{{blog.img_path}}" width="280px" style="width:100%; height:186.3px" height="100%" alt="blogies">
+       
+       <p>
+         <a class="text-light text-decoration-none" href="{{url_for('userview.post',post=blog._id)}}">{{blog.brief}} <i class="fa fa-arrow-right"></i> </a>
+         
+       </p>
+     </div>
+     {%endfor%}
+     {%else%}
+     <p>
+       Writing in progress
+     </p>
+      {%endif%}
+      
+  </div>
+  
+ 
+
+</div>
+
+
+
+<hr>
+<div class="footer mt-5 container">
+
+</div>
+{% endblock %}

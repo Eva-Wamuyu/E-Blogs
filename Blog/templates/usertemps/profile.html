@@ -1,0 +1,43 @@
+{% extends './base.html' %}
+
+<h2>Author</h2>
+
+{% block content %}
+<div class="main ">
+  <button class="btn float-start inverse py-0 px-4" onclick="goBack()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+  <img src="../../static/Assets/form-backgrounds.jpg" class="cover" alt="coverpng">
+</div>
+<div class="img">
+  <img class="profile" src="../../static/Assets/iconnny.png" width="220px" alt="profile">
+</div>
+
+<div class="container info">
+  <h3>
+    {{writer.name}}
+  </h3>
+  <p>
+    {{writer.user_name}}
+  </p>
+  <p class="ms-5">
+    <i class="fa fa-quote-left"></i>
+    <br>
+    Have You Read the Documentation?
+    <br>
+    <i class="fa fa-quote-right"></i>
+  </p>
+   
+
+
+</div>
+
+  
+{% endblock %}
+
+ {% block footer %}
+ <div class="container text-center foot">
+   <h3>Contact</h3>
+ <a href=""><i class="fab fa-twitter"></i></a>
+ <a target="_blank" href="https://github.com/Eva-Wamuyu"><i class="fab fa-github"></i></a>
+   
+</div>
+ {% endblock %}

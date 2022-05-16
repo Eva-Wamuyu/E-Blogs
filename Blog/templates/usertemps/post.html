@@ -1,0 +1,62 @@
+{% extends './base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <div>
+    
+    <h3 class="">Post</h3>
+  </div>
+  {% if blog %}
+  <div class="post">
+    <h4>{{blog.title}}</h4>
+    <hr>
+    <p>
+      {{blog.body}}
+    </p>
+<hr>
+    <a class="btn inverse" href="{{url_for('userview.comment',post=blog._id)}}">Comment</a>
+  </div>
+  <div class="comments">
+    {%if blog.fetchComments(blog._id)%}
+     <div>
+      <p>
+      Comments
+      </p>
+    <div>
+      {% for comment in blog.fetchComments(blog._id)%}
+
+     
+      <p>
+        <i class="fa fa-user" aria-hidden="true"></i>  {{comment.commentor}}
+        <br>
+        <span class="fa"> 
+          {{comment.date}}
+        </span>
+      </p>
+      <p class="ms-3">
+      {{comment.body}}
+        </p>
+        
+        {%endfor%}
+    </div>
+    </div>
+    {%else%}
+    <p>
+      No comments
+    </p>
+    {% endif %}
+
+   
+   
+  </div>
+  {%endif%}
+
+
+</div>
+  
+{% endblock %}
+
+{% block footer %}
+   
+{% endblock %}

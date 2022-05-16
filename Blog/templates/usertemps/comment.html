@@ -1,0 +1,38 @@
+{% extends './base.html' %}
+
+{% block content %}
+<a class="btn ms-5 text-light inverse" href="">Back</a>
+<hr>
+<div class="container mt-5 border  py-5">
+
+
+  <form class="w-75 c-form m-auto" method="post" action="">
+    {{ form.hidden_tag() }}
+    <h4>What is your take ...?</h4>
+ 
+    <p>
+      <small>
+      Remember to be polite and ethical
+    </small>
+    </p>
+    <div class="form-group">
+    {{form.author.label()}}
+    {{form.author(class="form-control input")}}
+  </div>
+  <div class="form-group">
+    {{form.comment.label()}}
+    {{form.comment(class="form-control textarea input")}}
+  </div>
+    {{form.submit(class="btn theme-bg mt-3")}}
+
+
+
+  </form>
+
+</div>
+  
+{% endblock %}
+
+{% block footer %}
+   
+{% endblock %}
