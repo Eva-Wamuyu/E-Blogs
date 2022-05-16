@@ -13,7 +13,7 @@ app.register_blueprint(writer_view, url_prefix="/EAdmin")
 
 basedirectory =os.path.abspath(os.path.dirname(__file__))
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///"+os.path.join(basedirectory,'database.sqlite')
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.sqlite"
 app.config['SIMPLEMDE_JS_IIFE'] = True
 app.config['SIMPLEMDE_USE_CDN'] = True
 bcrypt = Bcrypt(app)
@@ -24,9 +24,7 @@ app.config['SECRET_KEY'] = "hehe public"
 
 
 
-@app.route("/")
-def base():
-  return redirect(url_for('userview.index'))
+
 
 # def create_app():
 #     app.run()
