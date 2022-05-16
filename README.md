@@ -8,10 +8,11 @@ This is a personal blog. A user (no authentication required) is able to view a r
 A writer (an admin) can log in add blogs and delete blogs or comments.
 
 ## Live Link
-Userview:
-https://wamuyu-blog.herokuapp.com/
-Admin Endpoint
+Userview:  
+https://wamuyu-blog.herokuapp.com/  
+Admin endpoint  
 https://wamuyu-blog.herokuapp.com/EAdmin/
+
 ## Setup
 
 Fork the repository to have it in your remote storage
@@ -28,7 +29,6 @@ python3 run.py
 ## Running Tests
 From the root directory of the project
 ```
-cd tests
 python3 tests.py
 ```
 
