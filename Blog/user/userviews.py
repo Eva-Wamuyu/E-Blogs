@@ -2,10 +2,10 @@ from flask import render_template, redirect, url_for, flash, Blueprint
 import datetime
 from .forms import CommentForm
 from ..apireq import getRandomQuote
-
+from . import userview
 #from models import Blog
 
-userview = Blueprint("userview",__name__,static_folder="./../static",template_folder="Blog/templates")
+
 
 
 
@@ -56,3 +56,6 @@ def latest():
   post = Blog.query.first()
 
   return render_template('usertemps/post.html',blog=post)
+
+
+
