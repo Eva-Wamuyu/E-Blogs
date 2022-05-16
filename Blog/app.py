@@ -28,8 +28,8 @@ app.config['SECRET_KEY'] = "hehe public"
 def base():
   return redirect(url_for('userview.index'))
 
-def create_app():
-    app.run()
+# def create_app():
+#     app.run()
 
 
 
