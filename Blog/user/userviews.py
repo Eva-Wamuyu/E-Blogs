@@ -54,7 +54,7 @@ def aboutWriter():
 def latest():
   from ..models.models import Blog
   post = Blog.query.first()
-
+  
   return render_template('usertemps/post.html',blog=post)
 
 

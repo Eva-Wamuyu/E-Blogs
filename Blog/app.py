@@ -29,7 +29,7 @@ def base():
   return redirect(url_for('userview.index'))
 
 def create_app():
-    app.run(debug=True)
+    app.run()
 
 
 
