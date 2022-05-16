@@ -1,4 +1,4 @@
-from Blog.app import db,bcrypt
+from Blog import db,bcrypt
 from werkzeug.security import generate_password_hash,check_password_hash
 
 class Writer(db.Model):

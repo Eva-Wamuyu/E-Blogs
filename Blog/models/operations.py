@@ -1,5 +1,5 @@
 
-from app import *
+from Blog import *
 
 db.create_all()
 

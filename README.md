@@ -9,9 +9,9 @@ A writer (an admin) can log in add blogs and delete blogs or comments.
 
 ## Live Link
 Userview:
-
+https://wamuyu-blog.herokuapp.com/
 Admin Endpoint
-
+https://wamuyu-blog.herokuapp.com/EAdmin/
 ## Setup
 
 Fork the repository to have it in your remote storage
