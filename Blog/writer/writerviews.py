@@ -34,7 +34,6 @@ def writerIndex():
 def main():
   form = BlogForm()
   if confirmToken():
-    
     if form.validate_on_submit():
       from ..models.models import Blog
       blog = Blog(title = form.title.data, body=form.post.data,date= datetime.datetime.now(),category =form.category.data,img_path = form.img.data, brief=form.brief.data,authorId=1)
@@ -42,7 +41,8 @@ def main():
       print(confirmToken())
       return redirect(url_for('.posts'))
   print(form.validate_on_submit())
-  return render_template('writertemps/index.html',form=form)
+  return redirect(url_for('.writerIndex'))
+  
 
 @writer_view.route('/allposts')
 def posts():
@@ -76,18 +76,22 @@ def del_comment(post):
 
 @writer_view.route("/editprofile")
 def profile():
-  return render_template('writertemps/profile.html')
+  if confirmToken():
+   return render_template('writertemps/profile.html')
+  return redirect(url_for('.writerIndex'))
 
 @writer_view.route('/edit/<post>',methods=['POST','GET'])
 def edit(post):
-  from ..models.models import Blog
-  specblog = Blog.query.filter_by(_id = post).first()
-  form = BlogForm()
-  print(specblog)
-  print(form.validate_on_submit()) 
-  if form.validate_on_submit():
-    return redirect(url_for('.main'))
-  return render_template('writertemps/edit.html', form=form)
+  if confirmToken():
+      from ..models.models import Blog
+      specblog = Blog.query.filter_by(_id = post).first()
+      form = BlogForm()
+      print(specblog)
+      print(form.validate_on_submit()) 
+      if form.validate_on_submit():
+        return redirect(url_for('.main'))
+      return render_template('writertemps/edit.html', form=form)
+  return redirect(url_for('.writerIndex'))
 
 
 def confirmToken():
